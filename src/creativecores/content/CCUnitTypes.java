@@ -11,7 +11,7 @@ import mindustry.type.Weapon;
 
 public class CCUnitTypes {
     public static UnitType
-        seedling, sprout, bio, ecosystem;
+        seedling, sprout, biome, ecosystem, biosphere;
 
 
     public void load() {
@@ -70,7 +70,7 @@ public class CCUnitTypes {
             );
         }};
 
-        bio = new UnitType("bio") {{
+        biome = new UnitType("biome") {{
             health = 1360;
             accel = 0.05f;
             drag = 0.05f;
@@ -121,6 +121,52 @@ public class CCUnitTypes {
             maxRange = range;
             engineSize = 8f;
             engineOffset = 7f;
+        }};
+
+        biosphere = new UnitType("biosphere") {{
+            health = 3800;
+            accel = 0.02f;
+            drag = 0.03f;
+            speed = 1.3f;
+            armor = 43;
+            flying = true;
+            lowAltitude = true;
+            constructor = UnitEntity::create;
+
+            abilities.add(new ForceFieldAbility(300, 10, 2000, 300));
+
+            setEnginesMirror(
+                    new UnitEngine(14f, -7f, 4f, 0),
+                    new UnitEngine(14f, -7f, 4f, 0)
+            );
+
+            range = 400;
+            hitSize = 12;
+            maxRange = range;
+            engineSize = 8f;
+            engineOffset = 12f;
+
+            weapons.add(
+                    new Weapon("creative-cores-biosphere-sniper") {{
+                        x = 10;
+                        y = 0;
+                        mirror = true;
+                        reload = 50;
+                        top = true;
+                        shootSound = Sounds.lasershoot;
+                        bullet = CCBullets.biomeray;
+                    }},
+
+                    new Weapon("creative-cores-bio-spreader") {{
+                        x = 25;
+                        y = 0;
+                        mirror = true;
+                        reload = 100;
+                        top = true;
+                        shootSound = Sounds.lasershoot;
+                        bullet = CCBullets.bioGrouthBullet;
+                    }}
+            );
         }};
 
     }
