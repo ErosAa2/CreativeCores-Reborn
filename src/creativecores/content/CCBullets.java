@@ -8,10 +8,10 @@ import mindustry.graphics.Pal;
 
 public class CCBullets {
     public static BulletType
-        seedlingVine, sproutArtillary, bioGrouthBullet, ecosystemEmp, biomeray;
+            seedlingVine, sproutArtillary, bioGrouthBullet, ecosystemEmp, biomeray;
 
     public void load() {
-        seedlingVine = new MissileBulletType(4,10) {{
+        seedlingVine = new MissileBulletType(4, 10) {{
             weaveMag = 50;
             weaveScale = 1;
             lifetime = 100;
@@ -55,7 +55,7 @@ public class CCBullets {
 
         }};
 
-        bioGrouthBullet = new MissileBulletType(4,180) {{
+        bioGrouthBullet = new MissileBulletType(4, 180) {{
             weaveScale = 2;
             weaveMag = 20;
             lifetime = 250;
@@ -133,19 +133,6 @@ public class CCBullets {
 
                     homingPower = 15;
                     homingRange = 400;
-
-                    fragBullets = 16;
-                    fragBullet = new MissileBulletType(1, 8) {{
-                        shrinkY = shrinkX = 0;
-
-                        backColor = Color.valueOf("4cb043");
-                        frontColor = Color.valueOf("8ce66c");
-                        trailLength = 15;
-                        trailColor = Color.valueOf("9eff59");
-
-                        homingPower = 15;
-                        homingRange = 400;
-                    }};
                 }};
             }};
         }};
