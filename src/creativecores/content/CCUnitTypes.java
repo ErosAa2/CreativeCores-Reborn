@@ -153,7 +153,7 @@ public class CCUnitTypes {
                         mirror = true;
                         reload = 50;
                         top = true;
-                        range = 400;
+                        maxRange = range;
                         shootSound = Sounds.lasershoot;
                         bullet = CCBullets.biomeray;
                     }},
