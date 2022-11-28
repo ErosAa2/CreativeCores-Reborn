@@ -153,52 +153,7 @@ public class CCUnitTypes {
                         mirror = true;
                         reload = 50;
                         top = true;
-                        shootSound = Sounds.lasershoot;
-                        bullet = CCBullets.biomeray;
-                    }},
-
-                    new Weapon("creative-cores-bio-spreader") {{
-                        x = 25;
-                        y = 0;
-                        mirror = true;
-                        reload = 100;
-                        top = true;
-                        shootSound = Sounds.lasershoot;
-                        bullet = CCBullets.bioGrouthBullet;
-                    }}
-            );
-        }};
-
-        biosphere = new UnitType("biosphere") {{
-            health = 3800;
-            accel = 0.02f;
-            drag = 0.03f;
-            speed = 2f;
-            armor = 43;
-            flying = true;
-            lowAltitude = true;
-            constructor = UnitEntity::create;
-
-            abilities.add(new ForceFieldAbility(200, 10, 2000, 300));
-
-            setEnginesMirror(
-                    new UnitEngine(14f, -7f, 4f, 0),
-                    new UnitEngine(14f, -7f, 4f, 0)
-            );
-
-            range = 400;
-            hitSize = 12;
-            maxRange = range;
-            engineSize = 8f;
-            engineOffset = 12f;
-
-            weapons.add(
-                    new Weapon("creative-cores-biosphere-sniper") {{
-                        x = 10;
-                        y = 0;
-                        mirror = true;
-                        reload = 50;
-                        top = true;
+                        range = 400;
                         shootSound = Sounds.lasershoot;
                         bullet = CCBullets.biomeray;
                     }},
